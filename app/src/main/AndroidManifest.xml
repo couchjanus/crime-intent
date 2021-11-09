@@ -12,7 +12,7 @@
 
         <activity
             android:name=".CrimeListActivity"
-   git         android:exported="true">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

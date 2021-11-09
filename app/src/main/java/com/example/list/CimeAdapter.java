@@ -34,7 +34,7 @@ public class CimeAdapter extends RecyclerView.Adapter<CimeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
+        holder.mIdView.setText("Crime: " + mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
     }
 

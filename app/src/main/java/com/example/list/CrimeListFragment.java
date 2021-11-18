@@ -14,9 +14,6 @@ import android.view.ViewGroup;
 
 import com.example.list.placeholder.PlaceholderContent;
 
-/**
- * A fragment representing a list of Items.
- */
 public class CrimeListFragment extends Fragment {
 
     // TODO: Customize parameter argument names
@@ -24,22 +21,7 @@ public class CrimeListFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
-    public CrimeListFragment() {
-    }
 
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static CrimeListFragment newInstance(int columnCount) {
-        CrimeListFragment fragment = new CrimeListFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

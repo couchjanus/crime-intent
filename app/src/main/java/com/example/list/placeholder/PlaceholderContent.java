@@ -1,33 +1,20 @@
 package com.example.list.placeholder;
 
-import java.text.DateFormat;
+import androidx.annotation.NonNull;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Date;
+import java.util.Locale;
 
-
-
-/**
- * Helper class for providing sample content for user interfaces created by
- * Android template wizards.
- * <p>
- * TODO: Replace all uses of this class before publishing your app.
- */
 public class PlaceholderContent {
 
-    /**
-     * An array of sample (placeholder) items.
-     */
-    public static final List<PlaceholderItem> ITEMS = new ArrayList<PlaceholderItem>();
-    private Date mDate;
+    public static final List<PlaceholderItem> ITEMS = new ArrayList<>();
 
-    /**
-     * A map of sample (placeholder) items, by ID.
-     */
-    public static final Map<String, PlaceholderItem> ITEM_MAP = new HashMap<String, PlaceholderItem>();
+    public static final Map<String, PlaceholderItem> ITEM_MAP = new HashMap<>();
 
     private static final int COUNT = 25;
 
@@ -38,23 +25,17 @@ public class PlaceholderContent {
         }
     }
 
-    public Date getmDate(){
-        return mDate;
-    }
-
-    public void setmDate(Date date){
-        mDate = date;
-    }
-
     private static void addItem(PlaceholderItem item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
 
     private static PlaceholderItem createPlaceholderItem(int position) {
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT);
+//        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT);
+        SimpleDateFormat dateFormat;
+        dateFormat = new SimpleDateFormat("EEEE dd MMMM y", Locale.ENGLISH);
         String date = dateFormat.format(new Date());
-        return new PlaceholderItem(String.valueOf(position), "Crime date: " + date, makeDetails(position));
+        return new PlaceholderItem(String.valueOf(position), date, makeDetails(position));
     }
 
     private static String makeDetails(int position) {
@@ -81,6 +62,7 @@ public class PlaceholderContent {
         }
 
         @Override
+        @NonNull
         public String toString() {
             return content;
         }
